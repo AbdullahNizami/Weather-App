@@ -1,43 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Component } from '@angular/core';
-
+import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {HttpClient , HttpClientModule} from '@angular/common/http'
+
 import { AppComponent } from './app.component';
-import { WeatherUIComponent } from './weather-ui/weather-ui.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { CityComponent } from './city/city.component';
-import { Routes, RouterModule } from '@angular/router';
-import { ContactUsComponent } from './contact-us/contact-us.component';
-
-
-const routes : Routes =[
-  {   
-    path: '',
-    component: WeatherUIComponent
-  },
-  {
-    path: 'contact-us',
-    component: ContactUsComponent
-},
-  {
-    path : ":slug",
-    component : CityComponent
-  }
-  
-]
+import { UserInterfaceComponent } from './user-interface/user-interface.component';
+import { CitiesweatherService } from './citiesweather.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherUIComponent,
-    CityComponent,
-    ContactUsComponent
+    UserInterfaceComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
-    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
