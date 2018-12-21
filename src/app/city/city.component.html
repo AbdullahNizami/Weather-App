@@ -1,0 +1,40 @@
+<div class="container">
+        <!-- <h4><strong>City: </strong>{{cityData.name}}</h4>
+        <h4><strong>Country: </strong>{{cityData.country}}</h4> -->
+        <table class="table table-hover">
+    
+          <thead>
+            <tr>
+                    <th>Country</th>
+                    <th>City</th>
+                    <th>Humdity</th>
+                    <th>Max</th>
+                    <th>Min</th>
+                    <th>Pressure</th>
+                    <th>speed</th>
+                    <th>Description</th>
+                    <th>Clouds</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of list; let i = index">
+              <td> {{city.name}} </td>
+              <td> {{city.country}} </td>
+              <td> {{item.humidity}} </td>
+              <td> {{item.temp.max}} </td>
+              <td> {{item.temp.min}} </td>
+              <td> {{item.pressure}} </td>
+              <td> {{item.speed}} </td>
+              <td> {{item.weather[0].description}} </td>
+              <td> {{item.weather[0].main}} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+
+            
+            <!-- <a routerLink="/"><button>Lahore</button></a> -->
+
+            <a routerLink="/"><button class="button button3">Go Back</button></a>
+        

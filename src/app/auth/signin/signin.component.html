@@ -1,0 +1,21 @@
+<form (submit)="login(loginform)" #loginform="ngForm" >
+  <div class="box">
+  <h1 class="text1">Dashboard</h1>
+  <div class="form-group">
+      <input type="email" name="email" ngModel class="email" placeholder="Email" />
+  </div>
+  
+    
+  <input type="password" name="password" ngModel class="email"  placeholder="Password"/>
+    
+  <!-- <button></button><div class="btn">Sign In</div></a> End Btn -->
+  <button type="submit" class="btn">Signin</button>  
+  <a routerLink="register"><div id="btn2">Sign Up</div></a><!-- End Btn2 -->
+  <p style="color:#15053b;"  class="text">Forgot your password?<u style="color:#15053b;">Click Here!</u></p>
+    
+  </div> <!-- End Box -->
+    
+  </form>
+  
+  <!-- <p style="color:#15053b;">Forgot your password?<u style="color:#15053b;">Click Here!</u></p> -->
+    

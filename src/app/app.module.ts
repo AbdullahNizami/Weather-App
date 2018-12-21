@@ -1,21 +1,53 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpClient , HttpClientModule} from '@angular/common/http'
+import { NgModule, Component } from '@angular/core';
 
+import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
-import { UserInterfaceComponent } from './user-interface/user-interface.component';
-import { CitiesweatherService } from './citiesweather.service';
+import { WeatherUIComponent } from './weather-ui/weather-ui.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CityComponent } from './city/city.component';
+import { Routes, RouterModule } from '@angular/router';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AuthModule } from './auth/auth.module';
+
+
+const routes : Routes =[
+
+  {   
+    path: '',
+    component: WeatherUIComponent
+  },
+
+  {
+    path: 'contact-us',
+    component: ContactUsComponent
+  },
+  {
+    path : ":slug",
+    component : CityComponent
+  },
+  
+  {
+    path: '',
+    loadChildren: './auth/auth.module#AuthModule'
+
+  }
+  
+]
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserInterfaceComponent
+    WeatherUIComponent,
+    CityComponent,
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]
