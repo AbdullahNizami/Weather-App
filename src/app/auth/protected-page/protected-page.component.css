@@ -1,0 +1,39 @@
+.iname{
+
+    margin-left: 20px;
+    font-size: 15px;
+    padding: 15px;
+    color: black;
+    border-radius: 20px;
+    margin-top: 10px;
+    border-color: black;
+}
+.text{
+
+    margin-left: 20px;
+    margin-top: 50px;
+}
+.contact{
+
+    margin-left: 540px;
+    background-color: rgba(4, 4, 56, 0.952);
+    margin-right: 560px;
+    color: white;
+    
+    margin-top: 10px;
+    padding: 20px;
+    font-size: 20px;
+    text-align: center
+
+}
+.message{
+
+    margin-left: 20px;
+    font-size: 15px;
+    padding: 10px;
+    color: black;
+    border-radius: 20px;
+    margin-top:0px;
+    border-color: black;
+
+}
