@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
+import { AuthenticationService } from '../authentication.service';
+import { async } from '@angular/core/testing';
 @Component({
   selector: 'app-user-registration',
   templateUrl: './user-registration.component.html',
@@ -8,14 +10,39 @@ import {Router} from '@angular/router';
 })
 export class UserRegistrationComponent implements OnInit {
   model:any = {}
-  constructor() { }
+  constructor(public authenticationservice: AuthenticationService) { }
 
   ngOnInit() {
   }
 
 
-  onSubmit() {
-    console.log("I am submitted");
+  // onSubmit() {
+  //  console.log("submitted");
+
+   
+    
+  // }
+  
+  async signup(f: NgForm)
+  {
+   if(f.valid){
+
+    let body= f.value;
+    console.log(body);
+    
+    try{
+
+      let responce= this.authenticationservice.signup(body) as any;
+      console.log(responce);
+      
+      
+
+      } catch(error)  { 
+
+        console.log(error);
+        
+    }
+   }
     
   }
 

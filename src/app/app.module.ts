@@ -9,13 +9,17 @@ import { CityComponent } from './city/city.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AuthModule } from './auth/auth.module';
+import { CanActivate } from '@angular/router/src/utils/preactivation';
+import { AuthGuard } from './auth/auth.guard';
+import { WeatherResolver } from './resolvers/weather.resolver';
 
 
 const routes : Routes =[
 
   {   
     path: '',
-    component: WeatherUIComponent
+    component: WeatherUIComponent,
+    canActivate: [AuthGuard]
   },
 
   {
@@ -24,7 +28,8 @@ const routes : Routes =[
   },
   {
     path : ":slug",
-    component : CityComponent
+    component : CityComponent,
+    resolve: {cityWeather: WeatherResolver}
   },
   
   {

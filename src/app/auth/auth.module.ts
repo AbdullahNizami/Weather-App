@@ -4,6 +4,8 @@ import { SigninComponent } from './signin/signin.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { Routes, RouterModule } from '@angular/router';
 import {FormsModule} from '@angular/forms';
+import { ProtectedPageComponent } from './protected-page/protected-page.component';
+import { AuthGuard } from './auth.guard';
 const routes: Routes=[
 
 {
@@ -15,6 +17,12 @@ const routes: Routes=[
 {
   path: 'register',
   component: UserRegistrationComponent
+},
+{
+  path: 'feedback',
+  component: ProtectedPageComponent,
+  canActivate: [AuthGuard]
+
 }
 
 
@@ -23,7 +31,8 @@ const routes: Routes=[
 @NgModule({
   declarations: [
     SigninComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    ProtectedPageComponent
 ,
   ],
   imports: [

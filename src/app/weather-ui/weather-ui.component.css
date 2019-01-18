@@ -84,3 +84,11 @@ li a:hover {
     background-color: #4CAF50;
     color: aliceblue;
 }
+
+.btn-default2{
+
+    margin-left: 730px;
+    /* margin-right: 100px; */
+    background-color: #34495E;
+    color: aliceblue;
+}

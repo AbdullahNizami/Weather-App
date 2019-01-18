@@ -28,6 +28,8 @@ constructor(private weatherservice: WeatherService , public activatedRoute : Act
      })
 
      console.log(this.slug);
+     console.log("here");
+     
   }
   async getCityWeather(searchForm : NgForm) {
     //let city = searchForm.value.city

@@ -64,4 +64,9 @@ searchCity(form: NgForm){
   this.router.navigate([`${city}`]);
 }
 
+logout(){
+  localStorage.removeItem('token');
+  this.router.navigate(['/signin']);
+}
+
 }
