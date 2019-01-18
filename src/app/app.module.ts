@@ -12,6 +12,8 @@ import { AuthModule } from './auth/auth.module';
 import { CanActivate } from '@angular/router/src/utils/preactivation';
 import { AuthGuard } from './auth/auth.guard';
 import { WeatherResolver } from './resolvers/weather.resolver';
+import { Reactiveform1Component } from './reactiveform1/reactiveform1.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 const routes : Routes =[
@@ -26,11 +28,19 @@ const routes : Routes =[
     path: 'contact-us',
     component: ContactUsComponent
   },
+
+  {
+    path: 'reactiveform',
+    component: Reactiveform1Component
+
+  },
+  
   {
     path : ":slug",
     component : CityComponent,
     resolve: {cityWeather: WeatherResolver}
   },
+  
   
   {
     path: '',
@@ -46,6 +56,7 @@ const routes : Routes =[
     WeatherUIComponent,
     CityComponent,
     ContactUsComponent,
+    Reactiveform1Component,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +64,7 @@ const routes : Routes =[
     HttpClientModule,
     AuthModule,
     RouterModule.forRoot(routes),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
